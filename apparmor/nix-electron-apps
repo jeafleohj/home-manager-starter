@@ -1,0 +1,24 @@
+abi <abi/4.0>,
+
+include <tunables/global>
+
+# =========================
+# Discord
+# =========================
+profile nix-discord /nix/store/*-discord-*/** flags=(default_allow) {
+  userns,
+}
+
+# =========================
+# MongoDB Compass
+# =========================
+profile nix-mongodb-compass /nix/store/*-mongodb-compass-*/** flags=(default_allow) {
+  userns,
+}
+
+# =========================
+# VSCode
+# =========================
+profile nix-vscode /nix/store/*-vscode-*/** flags=(default_allow) {
+  userns,
+}

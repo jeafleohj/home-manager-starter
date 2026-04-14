@@ -1,0 +1,17 @@
+# List available recipes.
+default:
+    @just --list
+
+# Update flake inputs used by the Home Manager configuration.
+[group("Home Manager")]
+[linux]
+[working-directory(x"~/.config/home-manager")]
+home-manager-update:
+    @nix flake update
+
+# Apply the Home Manager configuration stored in ~/.config/home-manager.
+[group("Home Manager")]
+[linux]
+[working-directory(x"~/.config/home-manager")]
+home-manager-switch:
+    @home-manager switch --impure
